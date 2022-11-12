@@ -29,6 +29,8 @@ class YelpHelper:
                       'limit': limit, 'offset': offset}
         search_response = requests.request("GET", url,
                                            headers=headers, params=url_params)
+        if search_response.status_code != 200:
+            return None
         return search_response.json()["businesses"]
 
     def __make_business_request(self, name):
@@ -36,6 +38,8 @@ class YelpHelper:
         headers = {'Authorization': 'Bearer ' + self.api_key}
         search_response = requests.request("GET", url,
                                            headers=headers)
+        if search_response.status_code != 200:
+            return None
         self.id = search_response.json()['id']
         return self.id
 
@@ -44,6 +48,8 @@ class YelpHelper:
         headers = {'Authorization': 'Bearer ' + self.api_key}
         url_params = {}
         response = requests.request("GET", url, headers=headers, params=url_params)
+        if response.status_code != 200:
+            return None
         return response.json()
 
     def __extract_reviews(self, response_json):
@@ -60,4 +66,4 @@ if __name__ == "__main__":
     reviews_list = yelp.yelp_reviews_from_link("https://www.yelp.com/biz/la-fitness-chicago-5?osq=La+Fitness")
     print(reviews_list)
     reviews_list = yelp.yelp_reviews_from_link("https://www.yelp.com/biz/healthy-substance-chicago")
-    print(reviews_list)
+    print(reviews_list[0])
