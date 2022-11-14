@@ -23,6 +23,8 @@ class GoogleHelper:
         # if we didn't get the expected response then something went wrong
         if search_response.status_code != 200:
             return None
+        elif 'reviews' not in search_response.json()['result']:
+            return None
         # extract the text from reviews and return it as list
         text_reviews = []
         for review in search_response.json()['result']['reviews']:

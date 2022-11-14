@@ -2,11 +2,13 @@ import json
 
 from flask import Flask
 from flask import Response
+from flask_cors import CORS
 
 from google_helper import GoogleHelper
 from rake_keyword_extract import RakeExtract
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/api/keywords/<place_id>', methods=['GET'])
@@ -22,7 +24,7 @@ def get_keywords(place_id):
     for review in reviews_list:
         extracted_keywords = RakeExtract(review)
         for keyword in extracted_keywords:
-            keywords_list.append(keyword[0])
+            keywords_list.append({"keyword": keyword[0], "bias": keyword[1]})
     # return the keywords as a json list
-    js = keywords_list
+    js = {'keywords': keywords_list}
     return Response(json.dumps(js),  mimetype='application/json')
