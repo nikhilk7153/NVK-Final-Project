@@ -24,7 +24,7 @@ def get_keywords(place_id):
     for review in reviews_list:
         extracted_keywords = RakeExtract(review)
         for keyword in extracted_keywords:
-            keywords_list.append({"keyword": keyword[0], "bias": keyword[1]})
+            keywords_list.append({"keyword": keyword[0], "importance": keyword[1]})
     # return the keywords as a json list
     js = {'keywords': keywords_list}
     return Response(json.dumps(js),  mimetype='application/json')
