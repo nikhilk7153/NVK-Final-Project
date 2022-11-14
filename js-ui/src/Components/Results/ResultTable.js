@@ -1,13 +1,14 @@
 import { JsonToTable } from "react-json-to-table";
 
+import "./ResultTable.css"
+
 function ResultTable(props) {
     const newJson = {
-        'Pros': props.myJson.pros,
-        'Cons': props.myJson.cons
+        'Keywords': props.myJson.keywords
     }
 
     return(
-        <div className="detailsTable">
+        <div className="resultTable">
             <JsonToTable json={newJson}/>
         </div>
     )
