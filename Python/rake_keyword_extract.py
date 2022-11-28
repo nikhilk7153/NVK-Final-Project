@@ -6,6 +6,7 @@ import sys
 import numpy as np
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
+import contractions
 
 numpy.set_printoptions(threshold=sys.maxsize)
 
@@ -13,6 +14,18 @@ nltk.download('punkt')
 
 
 def RakeExtract(text):
+    
+    expanded_words = []   
+    for word in text.split():
+      # using contractions.fix to expand the shortened words
+      expanded_words.append(contractions.fix(word))  
+   
+    expanded_text = ' '.join(expanded_words)
+    expanded_text = expanded_text.lower()
+    expanded_text = expanded_text.replace(',', '')
+    
+    text = expanded_text
+    
     text_tokens = nltk.word_tokenize(text)
     sub_tokens = []
 
