@@ -27,7 +27,7 @@ export const AutoComplete = (props) => {
       });
       setOptions(optionValues);
     }
-  }, [placeDirectionsHasChanged, placePredictions]);
+  }, [placeDirectionsHasChanged]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (selectedValue !== "" && selectedValue) {
@@ -44,7 +44,7 @@ export const AutoComplete = (props) => {
     else {
       props.onGetProsCons("");
     }
-  }, [selectedValue, props]);
+  }, [selectedValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleInputChange = (inputValue) => {
     getPlacePredictions({ input: inputValue });
