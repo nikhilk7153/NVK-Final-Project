@@ -2,10 +2,11 @@ import "./App.css";
 import { useState } from "react";
 import Disclaimer from "./Components/Disclaimer/Disclaimer";
 import ResultTable from "./Components/Results/ResultTable";
-import ResultList from "./Components/Results/ResultList"
 import { AutoComplete } from "./Components/Autocomplete/Autocomplete";
 
 function App() {
+  process.env.GENERATE_SOURCEMAP = 'false';
+
   const [showDetails, setShowDetails] = useState(false);
   const [resultOutput, setResultOutput] = useState("");
 
@@ -19,6 +20,8 @@ function App() {
       setShowDetails(false);
     }
   }
+
+  console.log(process.env);
   
   return (
     <div className="App">

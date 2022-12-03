@@ -9,6 +9,7 @@ import { usePrevious } from "../../shared/hooks/usePrev";
 export const AutoComplete = (props) => {
   const { placePredictions, getPlacePredictions, isPlacePredictionsLoading } =
     useGoogle({
+      //apiKey: process.env.REACT_APP_GOOGLE_K,
       apiKey: "AIzaSyDBlcm5umGwbO8xPO96CGUp-dQ8-Md1isg",
     });
   const [selectedValue, setSelectedValue] = useState("");
@@ -26,7 +27,7 @@ export const AutoComplete = (props) => {
       });
       setOptions(optionValues);
     }
-  }, [placeDirectionsHasChanged]);
+  }, [placeDirectionsHasChanged, placePredictions]);
 
   useEffect(() => {
     if (selectedValue !== "" && selectedValue) {
@@ -43,7 +44,7 @@ export const AutoComplete = (props) => {
     else {
       props.onGetProsCons("");
     }
-  }, [selectedValue]);
+  }, [selectedValue, props]);
 
   const handleInputChange = (inputValue) => {
     getPlacePredictions({ input: inputValue });
