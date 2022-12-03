@@ -6,6 +6,8 @@ from flask_cors import CORS
 
 from google_helper import GoogleHelper
 from rake_keyword_extract import RakeExtract
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
 
 app = Flask(__name__)
 CORS(app)
@@ -21,10 +23,21 @@ def get_keywords(place_id):
         return "No reviews found for the link", 400
     # extract only the keywords, and not their bias
     keywords_list = []
+    sid_obj = SentimentIntensityAnalyzer()
     for review in reviews_list:
         extracted_keywords = RakeExtract(review)
         for keyword in extracted_keywords:
-            keywords_list.append({"keyword": keyword[0], "importance": keyword[1]})
-    # return the keywords as a json list
+   
+            sentiment_dict = sid_obj.polarity_scores(keyword[0])
+            predicted_sentiment = "Neutral"
+            if sentiment_dict['compound'] >= 0.10 :
+               predicted_sentiment = 'Positive'
+ 
+            elif sentiment_dict['compound'] <= - 0.10 :
+                predicted_sentiment = 'Negative'
+            
+            keywords_list.append({"keyword": keyword[0], "importance": keyword[1], "sentiment": predicted_sentiment})
+
     js = {'keywords': keywords_list}
-    return Response(json.dumps(js),  mimetype='application/json')
+    return Response(json.dumps(js), mimetype='application/json')
+
