@@ -5,7 +5,7 @@ function Disclaimer() {
         <div className='disclaimer'>
             <h3>CS410 Project - NVK</h3>
             <h4>Kyr Nastahunin, Nikhil Khandekar, Vineet Chinthakindi</h4>
-            <p>This webpage allows to find a a yelp business and discover the key points about the pros and cons of it's operation.<br></br>
+            <p>This webpage allows to find a google maps business and discover the key points about the pros and cons of it's operation.<br></br>
                 We used the following documents as our source: <br></br>
                 <a href='https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents'>Automatic Keyword Extraction from Individual Documents</a>
                 &nbsp;and&nbsp;

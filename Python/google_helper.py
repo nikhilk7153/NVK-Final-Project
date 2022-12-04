@@ -11,7 +11,7 @@ class GoogleHelper:
                  api_key="AIzaSyDBlcm5umGwbO8xPO96CGUp-dQ8-Md1isg"):
         self.api_key = api_key
 
-    # find get the reviews by google place id and return their text as a list
+    # find get the reviews by google place id and return their texts as a list
     def get_reviews_from_id(self, place_id):
         url = "https://maps.googleapis.com/maps/api/place/details/json"
         headers = {}
