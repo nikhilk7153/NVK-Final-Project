@@ -28,6 +28,9 @@ def get_keywords(place_id):
         extracted_keywords = RakeExtract(review)
         for keyword in extracted_keywords:
             # get the sentiment of the keyword
+            # sources used for VaderSentimentTool - https://towardsdatascience.com/an-short-introduction-to-vader-3f3860208d53 
+            # and https://www.geeksforgeeks.org/python-sentiment-analysis-using-vader/
+            
             sentiment_dict = sid_obj.polarity_scores(keyword[0])
             predicted_sentiment = "Neutral"
             if sentiment_dict['compound'] >= 0.10:
