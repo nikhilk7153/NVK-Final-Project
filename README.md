@@ -15,7 +15,7 @@ Presentation Slides + Demo Youtube Video: https://docs.google.com/presentation/d
 
 ## Video of how to run
 
-[![How to run](https://img.youtube.com/vi/y1uNM5kK2cg/0.jpg)](https://www.youtube.com/watch?v=y1uNM5kK2cg)
+Link: https://youtu.be/y1uNM5kK2cg
 
 ## Alternative way to test
 Since the app is created as an API it can be tested by just making a request to it through browser in the following format: `http://127.0.0.1:5000/api/keywords/<google_place_id>`. Example: `http://127.0.0.1:5000/api/keywords/ChIJ4Vrk3Bo3DogRpHfXxy0yu98`. You can find Google Place Ids on the following page https://developers.google.com/maps/documentation/places/web-service/place-id.
