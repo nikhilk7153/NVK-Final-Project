@@ -1,6 +1,9 @@
 # CourseProject
 
-NVK Final Project
+NVK Final Project:
+
+Presentation Video:
+Presentation Slides + Demo Youtube Video: https://docs.google.com/presentation/d/1x7FOVrt9H3-FKMX1jjnYv_hquu2TYZrSphNrxLxyx3E/edit?usp=sharing
 
 ## How to run
 1. Open the `Python` folder and run the `pip install -r requirements.txt` command in console to install the dependencies. We ran a conda environment in Python 3.8 and 3.9 and can't gurantee that functionality with other versions.
