@@ -7,6 +7,7 @@ Presentation Video:
 Presentation Slides + Demo Youtube Video: https://docs.google.com/presentation/d/1x7FOVrt9H3-FKMX1jjnYv_hquu2TYZrSphNrxLxyx3E/edit?usp=sharing
 
 ## How to run
+0. Clone this repository locally
 1. Install Conda v4.10.3 or better. Create conda environment `conda create --name test python=3.9`
 2. Activate conda environment `conda activate test`
 3. Open the `Python` folder and run the `pip install -r requirements.txt` command in console to install the dependencies. We ran a conda environment in Python 3.8 and 3.9 and can't gurantee that functionality with other versions.
