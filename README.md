@@ -7,11 +7,13 @@ Presentation Video:
 Presentation Slides + Demo Youtube Video: https://docs.google.com/presentation/d/1x7FOVrt9H3-FKMX1jjnYv_hquu2TYZrSphNrxLxyx3E/edit?usp=sharing
 
 ## How to run
-1. Open the `Python` folder and run the `pip install -r requirements.txt` command in console to install the dependencies. We ran a conda environment in Python 3.8 and 3.9 and can't gurantee that functionality with other versions.
-2. Start the app as a flask server from the `app.py` file. Use the `python -m flask run` command.
-3. Open the `js-ui` folder and run the `npm install` command to install dependencies. 
-4. After the dependencies are installed run the `npm start` command to open the UI app.
-5. After a while the window with `localhost:3000` will open in browser. You can start using the app.
+1. Install Conda v4.10.3 or better. Create conda environment `conda create --name test python=3.9`
+2. Activate conda environment `conda activate test`
+3. Open the `Python` folder and run the `pip install -r requirements.txt` command in console to install the dependencies. We ran a conda environment in Python 3.8 and 3.9 and can't gurantee that functionality with other versions.
+4. Start the app as a flask server from the `app.py` file. Use the `python -m flask run` command.
+5. Open the `js-ui` folder and run the `npm install` command to install dependencies. 
+6. After the dependencies are installed run the `npm start` command to open the UI app.
+7. After a while the window with `localhost:3000` will open in browser. You can start using the app.
 
 ## Video of how to run
 
