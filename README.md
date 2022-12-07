@@ -3,6 +3,7 @@
 NVK Final Project:
 
 Presentation Video: https://youtu.be/5mnNC3_LPJc
+Presentation Slides: https://docs.google.com/presentation/d/1x7FOVrt9H3-FKMX1jjnYv_hquu2TYZrSphNrxLxyx3E/edit?usp=sharing
 
 ## How to run
 0. Clone this repository locally
